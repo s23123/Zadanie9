@@ -38,9 +38,9 @@ namespace WebApplication.Models
                 u.Property(e => e.IdUser).UseIdentityColumn();
                 u.Property(e => e.Login).HasMaxLength(32).IsRequired();
                 u.HasIndex(e => e.Login).IsUnique();
-                u.Property(e => e.Password).HasMaxLength(32).IsRequired();
-                u.Property(e => e.Salt).HasMaxLength(64).IsRequired();
-                u.Property(e => e.RefreshToken).HasMaxLength(64).IsRequired();
+                u.Property(e => e.Password).IsRequired();
+                u.Property(e => e.Salt).IsRequired();
+                u.Property(e => e.RefreshToken).IsRequired();
                 u.Property(e => e.RefreshTokenExpiration);
             });
 
